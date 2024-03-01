@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas 룰렛</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+
+    <script src="js/game.js"></script>
+    <script>
+                
+
+    </script>
+</head>
+
+<body>
+    <canvas id="rouletteCanvas" width="600" height="600"></canvas>
+    <!-- <p id="hidden_answer" style="color: transparent;">요기있지</p> -->
+    
+    <div>결과 : 
+        숫자 : <input oninput="start_fn()" id="hidden_answer_1" disabled>
+        색 : <input id="hidden_answer_2" disabled>
+    </div> 
+
+    <div>
+        <B>초기 설정 금액</B>
+    </div>
+    <div id="insert_div">
+        <input type="number" min=0 max="1000" id="insert_coin" value="0">
+        <b>원</b>
+        <!-- <input type="text" id="insert_coin" disabled>원 -->
+        <button id="insert_btn" onclick="setup_play()">초기 금액 확정</button>
+    </div>
+    <div>
+        <B>이번 베팅 금액</B>
+    </div>
+    <div>
+        <input type="number" id="gamble_coin" min=0 max="1000">
+        <b>원</b>
+        <button id="coin_fix_Btn" onclick="prepare_play()">금액 확정</button>
+    </div>
+    <div>
+        <B>선택 옵션</B>
+    </div>
+    <div>
+
+        <select onchange="disable_fn()" class="form-select" aria-label="Default select example" id="select_color">
+            <option selected>Red/Black</option>
+            <option value="1">Red</option>
+            <option value="2">Black</option>
+        </select>
+
+        <select onchange="disable_fn()" class="form-select" aria-label="Default select example" id="select_number">
+            <option selected>Number</option>
+            <!-- <option value="1">Red</option> -->
+        </select>
+
+        <select onchange="disable_fn()" class="form-select" aria-label="Default select example" id="select_grade">
+            <option selected>1st(1~12)/2nd(13~24)/3rd(25~36)</option>
+            <!-- <option value="1">Red</option> -->
+        </select>
+    </div>
+    <div>
+        <button id="spinBtn">룰렛 돌리기</button>
+    </div>
+
+</body>
+
+</html>
+
